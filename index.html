@@ -28,7 +28,7 @@ p.lead{color:#555;margin-top:8px}
 <header>
   <div class="logo">AL</div>
   <div>
-    <h1>Untuk Alice yang masih ngambek dikit…</h1>
+    <h1>Untuk Alice</h1>
     <p class="lead">Sebuah percobaan kecil untuk bikin kamu senyum lagi — versi bego lucu yang ngarep dimaafin.</p>
   </div>
 </header>
@@ -37,7 +37,7 @@ p.lead{color:#555;margin-top:8px}
 <section id="scene1" class="scene active">
   <div class="type">Hai Alice...</div>
   <div class="small">
-    Aku tahu akhir-akhir ini Kamu pasti kesal sama aku mungkin terlihat seperti laki-laki yang nggak bisa jaga sikap.  
+    Aku tahu akhir-akhir ini kamu pasti kesal sama aku, mungkin terlihat seperti laki-laki yang nggak bisa jaga sikap.  
     Tapi jujur, aku cuma manusia yang sedang belajar untuk jadi lebih baik — untuk kamu.
   </div>
 
@@ -80,4 +80,25 @@ p.lead{color:#555;margin-top:8px}
   </div>
 </section>
 
-<!-- Pemu
+<!-- Pemutar Musik -->
+<audio id="song" src="https://dl.dropboxusercontent.com/scl/fi/1ufk66dr0s95e8zmm5k4r/kelly.mp3?rlkey=4z0hvpxqqpj7lg2g1b0sac0g8&dl=0"></audio>
+
+</div>
+
+<script>
+document.querySelectorAll('[data-next]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const next = btn.getAttribute('data-next');
+    document.querySelectorAll('.scene').forEach(s=>s.classList.remove('active'));
+    document.getElementById(next).classList.add('active');
+  });
+});
+
+function playMusic(){
+  const audio=document.getElementById('song');
+  audio.currentTime=0;
+  audio.play();
+}
+</script>
+</body>
+</html>
